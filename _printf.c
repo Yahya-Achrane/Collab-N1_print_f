@@ -30,26 +30,26 @@ int	_check(va_list olya, char vd)
  * Return: int.
  */
 
-int	_printf(const char *vd, ...)
+int	_printf(const char *format, ...)
 {
 	int i;
 	int plus;
 	va_list olya;
 
-	va_start(olya, vd);
+	va_start(olya, format);
 	i = 0;
 	plus = 0;
-	while (vd[i])
+	while (format[i])
 	{
-	if (vd[i] == '%')
+	if (format[i] == '%')
 	{
 		i++;
-	plus += _check(olya, vd[i]);
-	if (vd[i] == '\0')
+	plus += _check(olya, format[i]);
+	if (format[i] == '\0')
 		break;
 	}
 	else
-		plus += _putchar(vd[i]);
+		plus += _putchar(format[i]);
 		i++;
 	}
 	va_end(olya);
