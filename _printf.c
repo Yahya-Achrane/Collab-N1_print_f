@@ -40,7 +40,6 @@ int	_printf(const char *format, ...)
 	i = 0;
 	plus = 0;
 	while (format[i])
-	{
 	if (format[i] == '%')
 	{
 		i++;
@@ -49,6 +48,7 @@ int	_printf(const char *format, ...)
 		break;
 	}
 	else
+	{
 		plus += _putchar(format[i]);
 		i++;
 	}
