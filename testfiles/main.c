@@ -2,9 +2,15 @@
 #include "main.h"
 int main()
 {
-	_printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
- _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");	
-    return 1;
+int p =	_printf("Character:[%c]\n", 'H');
+int a =     printf("Character:[%c]\n", 'H');
+printf ("%d     %d\n", p, a);
+p = _printf("String:[%s]\n", "I am a string !");
+a =     printf("String:[%s]\n", "I am a string !");	
+   printf ("%d     %d\n", p, a); 
+   p = _printf("Percent:[%%]\n");
+	a = printf("Percent:[%%]\n");
+   printf("%d    %d\n", p, a); 
+   return 1;
+
 }

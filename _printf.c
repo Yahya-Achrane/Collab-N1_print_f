@@ -40,19 +40,14 @@ int	_printf(const char *format, ...)
 	plus = 0;
 	while (format[i])
 	{
-	if (format[i] == '%')
-	{
+		if (format[i] == '%')
+		{
+			plus = plus + _check(olya, format[i + 1]);
+			i++;
+		}
+		else
+			plus += _putchar(format[i]);
 		i++;
-		plus += _check(olya, format[i]);
-		if (format[i] == '\0')
-			break;
-		i++;
-	}
-	else
-	{
-		plus += _putchar(format[i]);
-		i++;
-	}
 	}
 	va_end(olya);
 	return (plus);
