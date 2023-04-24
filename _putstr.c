@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * _putstr - puts a string
+ * @s: argument.
+ * Return: int
+ */
 
 int	_putstr(char *s)
 {

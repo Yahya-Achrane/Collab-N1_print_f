@@ -7,7 +7,7 @@
  * Return: On success 1.
  */
 
-int	ft_putchar(char wr)
+int	_putchar(char wr)
 {
 	write(1, &wr, 1);
 	return (1);
