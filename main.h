@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int _putchar(char wr);
 int _putstr(char *s);
 int _convert(unsigned long n);
 
