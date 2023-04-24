@@ -7,7 +7,7 @@
 
 int	_putstr(char *s)
 {
-	int	i = 0;
+	int	i = -1;
 
 	if (!s)
 		return (_putstr("(null)"));
