@@ -1,54 +1,49 @@
 #include "main.h"
 
-/**
- * _check - checks the code
- * @vd: argument
- * @olya: argument
- *
- * Return: int.
- */
-int	_check(va_list olya, char vd)
+int _printf(const char *format, ...)
 {
-	int plus;
-
-	plus = 0;
-	if (vd == 'c')
-		plus += _putchar(va_arg(olya, int));
-	else if (vd == 's')
-		plus += _putstr(va_arg(olya, char *));
-	else if (vd == '%')
-		plus += _putchar('%');
-	else
-		plus += _putchar(vd);
-	return (plus);
-}
-/**
- * _printf - checks the code
- * @format: argument
- *
- * Return: int.
- */
-
-int	_printf(const char *format, ...)
-{
-	int i;
-	int plus;
-	va_list olya;
-
-	va_start(olya, format);
-	i = 0;
-	plus = 0;
-	while (format[i])
+      va_list args;
+    int (*printer)(va_list, flg_t*);
+    int count;
+    const char *p = format;
+    if (format == NULL || *format == '\0')
+    {
+        return -1;
+    }
+    va_start(args, format);
+    
+    count = 0;
+    while (*p != '\0')
+    {
+        if (*p == '%')
 	{
-		if (format[i] == '%')
+            flg_t flags = {0, 0, 0};
+            p++;
+            while (_flag(*p, &flags))
+	    {
+                p++;
+            }
+            printer = _print(*p);
+            if (printer != NULL)
+	    {
+                count += printer(args, &flags);
+            }
+	    else 
+	    {
+                count += _putchar('%');
+                if (*p != '%')
 		{
-			plus = plus + _check(olya, format[i + 1]);
-			i++;
-		}
-		else
-			plus += _putchar(format[i]);
-		i++;
-	}
-	va_end(olya);
-	return (plus);
+                    count += _putchar(*p);
+                }
+            }
+            p++;
+        }
+       	else 
+	{
+            count += _putchar(*p);
+            p++;
+        }
+    }
+    va_end(args);
+    return count;
 }

@@ -1,17 +1,15 @@
 #include "main.h"
 /**
  * _putstr - puts a string
- * @s: argument.
+ *@str: string
  * Return: int
  */
 
-int	_putstr(char *s)
+int _putstr(char *str)
 {
-	int	i = -1;
+	int i;
 
-	if (!s)
-		return (_putstr("(null)"));
-	while (s[++i])
-		write(1, &s[i], 1);
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
 	return (i);
 }
