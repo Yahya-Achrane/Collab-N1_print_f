@@ -25,7 +25,7 @@ int	_check(va_list olya, char vd)
 }
 /**
  * _printf - checks the code
- * @vd: argument
+ * @format: argument
  *
  * Return: int.
  */
