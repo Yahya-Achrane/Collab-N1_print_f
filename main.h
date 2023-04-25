@@ -49,5 +49,9 @@ int _flag(char s, flg_t *k);
 
 int print_string(va_list l, flg_t *k);
 int print_char(va_list l, flg_t *k);
+int integer(va_list l, flg_t *k);
+
+void print_numbers(int n);
+int counter_digits(int i);
 
 #endif

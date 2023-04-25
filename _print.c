@@ -15,9 +15,11 @@ int (*_print(char s))(va_list, flg_t *)
 	per function_arr[] = {
 		{'s', print_string},
 		{'c', print_char},
-		{'%', _percent}
+		{'%', _percent},
+		{'i', integer},
+		{'d', integer}
 		};
-	int flags = 3;
+	int flags = 5;
 
 	int i;
 

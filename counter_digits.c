@@ -1,4 +1,4 @@
-include  "main.h"
+#include "main.h"
 
 /**
  * counter_digits - returns the number of digits in an integer
