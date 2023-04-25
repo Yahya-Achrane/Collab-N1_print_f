@@ -54,4 +54,7 @@ int integer(va_list l, flg_t *k);
 void print_numbers(int n);
 int counter_digits(int i);
 
+int print_bin(va_list l, flg_t *k);
+char *_convert(unsigned long int num, int base, int lowcase);
+
 #endif

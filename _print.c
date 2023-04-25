@@ -17,9 +17,10 @@ int (*_print(char s))(va_list, flg_t *)
 		{'c', print_char},
 		{'%', _percent},
 		{'i', integer},
-		{'d', integer}
+		{'d', integer},
+		{'b', print_bin}
 		};
-	int flags = 5;
+	int flags = 6;
 
 	int i;
 
