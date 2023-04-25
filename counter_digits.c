@@ -1,7 +1,7 @@
 include  "main.h"
 
 /**
- * counte_digits - returns the number of digits in an integer
+ * counter_digits - returns the number of digits in an integer
  * for _printf
  * @i: integer to evaluate
  * Return: number of digits
